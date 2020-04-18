@@ -15,7 +15,7 @@ import java.util.logging.Logger;
  *
  * @author Vinni
  */
-public class Conexion {
+public class AdmConexion {
     public Connection conectarse(){
         
         try {
@@ -24,9 +24,9 @@ public class Conexion {
             "jdbc:postgresql://127.0.0.1:5432/basehoy", "pruebahoy", "123");
             return c;
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, "Error de driver postgres", ex);
+            Logger.getLogger(AdmConexion.class.getName()).log(Level.SEVERE, "Error de driver postgres", ex);
         } catch (SQLException ex) {
-            Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, "Error de datos de conexion postgres", ex);
+            Logger.getLogger(AdmConexion.class.getName()).log(Level.SEVERE, "Error de datos de conexion postgres", ex);
         }
         return null;
     }
@@ -34,7 +34,7 @@ public class Conexion {
         try {
             c.close();
         } catch (SQLException ex) {
-            Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, "Error al cerrar la conexion", ex);
+            Logger.getLogger(AdmConexion.class.getName()).log(Level.SEVERE, "Error al cerrar la conexion", ex);
         }
     }
 }

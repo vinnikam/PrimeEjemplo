@@ -20,12 +20,12 @@ import java.util.logging.Logger;
 public class OperacionesVehiculo {
     
     public int insertar(Vehiculo dato){
-        Conexion conn = new Conexion();
+        AdmConexion conn = new AdmConexion();
         Connection miconex = conn.conectarse();
         if(miconex != null){
             try {
                 PreparedStatement ps = miconex.prepareStatement(
-                        "INSERT INTO vehiculo(placa, precio, marca)VALUES (?, ?, ?)");
+                        "INSERT INTO vehiculo(placa, precio, marca) VALUES (?, ?, ?)");
                 
                 ps.setString(1, dato.getPlaca());
                 ps.setString(3, dato.getMarca());
